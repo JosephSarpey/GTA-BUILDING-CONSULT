@@ -9,7 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #333;
   line-height: 1.6;
-  margin-top: 75px; /* Added margin to prevent content from being hidden under the fixed nav */
+  margin-top: 80px; /* Added margin to prevent content from being hidden under the fixed nav */
 }
 
 h1, h2, p {
@@ -115,7 +115,7 @@ html {
 /* Responsive Design */
 @media (max-width: 768px) {
   #hero {
-    height: 80vh;
+    height: 60vh;
     padding: 0 15px;
   }
 
@@ -218,19 +218,19 @@ header {
 nav ul {
   list-style: circle;
   display: flex;
-  gap: 20px;
+  gap: 5px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 5px 10px;
   transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
   background-color: brown;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .logo {
@@ -243,6 +243,7 @@ nav ul li a:hover {
 
 .logo img {
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 section {
@@ -302,60 +303,117 @@ section {
 }
 
 /* Contact Section */
+/* Contact Section Styles */
 #contact {
-  background-color: #0056b3;
-  color: #fff;
-  padding: 60px 20px;
-  text-align: center;
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 50px 20px;
+  text-align: left;
 }
 
 #contact h2 {
-  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .contact-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap; /* Ensures responsiveness */
   align-items: center;
+  justify-content: space-around;
   gap: 20px;
 }
 
 #contact-form {
+  flex: 1 1 45%; /* Takes 45% width of the container */
   max-width: 500px;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+}
+
+#contact-form label {
+  margin: 10px 0 5px;
+  font-weight: bold;
 }
 
 #contact-form input,
 #contact-form textarea {
   width: 100%;
-  padding: 10px;
-  border: none;
+  padding: 20px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1em;
   resize: none;
 }
 
 #contact-form button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: #333; /* Vibrant orange for attractiveness */
+  color: #fff; /* White text for contrast */
+  border: none; /* No border for a sleek look */
+  border-radius: 20px; /* Rounded edges for a 'cute' feel */
+  padding: 8px 20px; /* Smaller padding for a compact size */
+  font-size: 0.9rem; /* Smaller font size */
+  font-weight: bold; /* Make the text stand out */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease-in-out; /* Smooth hover effect */
 }
 
+/* Add hover effect */
 #contact-form button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Slightly darker orange on hover */
+  transform: scale(1.05); /* Slight enlargement for interaction feedback */
 }
+
 
 .contact-info {
-  color: #fff;
+  flex: 1 1 45%; /* Takes 45% width of the container */
+  max-width: 500px;
+  text-align: center;
 }
+
+.contact-info img.contact-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  /* Stack the form and image vertically */
+  .contact-container {
+    flex-direction: column; /* Items are stacked */
+    align-items: left;    /* Center-align content */
+    gap: 20px;              /* Add space between stacked items */
+  }
+
+  #contact-form,
+  .contact-info {
+    flex: 1 1 100%; /* Both the form and the image take full width */
+    max-width: 90%; /* Add padding from the screen edges */
+    text-align: left; /* Center-align content */
+  }
+
+  /* Adjust image size for smaller screens */
+  .contact-info img.contact-image {
+    width: 100%; /* Image takes the width of its container */
+    max-width: 400px; /* Prevent image from becoming too large */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center image within container */
+    border-radius: 10px; /* Keep the rounded corners */
+  }
+
+  /* Adjust input fields and button for smaller screens */
+  #contact-form input,
+  #contact-form textarea {
+    font-size: 1rem; /* Slightly larger text for readability */
+    padding: 10px;
+  }
+
+  #contact-form button {
+    font-size: 1rem; /* Larger button text */
+    padding: 12px 20px; /* Add padding for touch devices */
+  }
+}
+
+
 
 /* Projects Section */
 #projects {
@@ -417,15 +475,13 @@ section {
 footer {
   background-color: #333;
   color: white;
-  text-align: center;
-  padding: 20px 0;
+  text-align: left;
+  padding: 10px 0;
 }
 
 footer p {
   font-size: 1rem;
 }
-
-
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
@@ -465,4 +521,36 @@ footer p {
   }
 }
 
+/* Style for the social media icons */
+footer .social-icons {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  gap: 5px; /* Space between the icons */
+  padding: 20px 0; /* Add padding around the icons */
+}
 
+footer .social-icons a {
+  display: inline-block;
+  background-color: #fff; /* White background for the icons */
+  border-radius: 50%; /* Make the icons circular */
+  padding: 12px; /* Add padding inside the circles */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth effect on hover */
+}
+
+footer .social-icons a img {
+  width: 25px; /* Set icon size */
+  height: 25px; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure icons scale well */
+  transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+/* Hover effects for the icons */
+footer .social-icons a:hover {
+  transform: scale(1.1); /* Slight enlargement */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+footer .social-icons a:hover img {
+  border-radius: 50%;
+  transform: scale(1.1); /* Slight enlargement of the icon */
+}

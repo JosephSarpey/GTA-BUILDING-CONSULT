@@ -6,17 +6,227 @@
   <title>GTA Building Consult - Landing Page</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/thompson_logo.jpg" type="image/x-icon">
-  
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: lightblue;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      margin-right: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav ul li {
+      list-style: circle;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: xx-small;
+      font-weight: lighter;
+    }
+
+    /* Hero Section */
+    #hero {
+      background: url('images/hero-bg.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    #hero h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+
+    .cta-btn:hover {
+      background-color: #333;
+    }
+
+    /* About Section */
+    #about {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    #about .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+
+    .about-images img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    /* Services Section */
+    #services {
+      padding: 50px 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .service-box {
+      flex: 1;
+      max-width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .service-box h3 {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .service-box p {
+      margin: 10px 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+
+      .services-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      #hero h1 {
+        font-size: 1.5rem;
+      }
+
+      #hero p {
+        font-size: 1rem;
+      }
+
+      .cta-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-images img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 10px;
+      }
+
+      .logo img {
+        width: 30px;
+        height: 30px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo">
       <img class="logo-img" src="images/thompson_logo.jpg" width="50" height="50">
-      GTA BUILDING CONSULT
+      GTA Building Consult
     </div>
     <nav>
       <ul>
-
         <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -28,17 +238,16 @@
   <section id="hero">
     <div class="hero-content">
       <h1>Your Comfort, Our Success</h1>
-      <p class="hero hero-content">Providing quality and innovative construction solutions for your needs</p>
+      <p>Providing quality and innovative construction solutions for your needs</p>
       <a href="services.html" class="cta-btn">Explore Our Services</a>
     </div>
   </section>
 
-  <section id="about" class="section-about">
+  <section id="about">
     <h2>About Us</h2>
     <div class="about-content">
       <div class="about-text">
-        <p class="about-text">Welcome to GTA Building Consult, where innovative design meets expert project management. We are a dedicated team of professionals committed to delivering top-notch services in structural design, site planning, and project management. With years of experience in the industry, we pride ourselves on creating practical, sustainable, and aesthetically pleasing solutions tailored to meet our clients’ unique needs...<a href="about.html" class="cta-button">Learn More</a> </p>
-
+        <p>Welcome to GTA Building Consult, where innovative design meets expert project management. We are a dedicated team of professionals committed to delivering top-notch services in structural design, site planning, and project management... <a class="learn-more-button" href="about.html">Learn More</a></p>
       </div>
       <div class="about-images">
         <img src="images/building1.jpg" alt="Construction Image 1">
@@ -47,34 +256,33 @@
     </div>
   </section>
 
-  <section id="services" class="section-services">
+  <section id="services">
     <h2>Our Services</h2>
-    <h3>We undertake a wide range of civil engineering services</h3>
     <div class="services-container">
       <div class="service-box">
-        <img src="images/service2">
+        <img src="images/service2.jpg" alt="Land Survey">
         <h3>Land Survey</h3>
         <p>Reliable designs for all types of structures.</p>
         <a href="services.html" class="cta-btn">View More</a>
       </div>
       <div class="service-box">
-        <img src="images/service1.jpg" alt="Site Planning">
+        <img src="images/service1.jpg" alt="Drawing of Building Plan">
         <h3>Drawing Of Building Plan</h3>
         <p>Efficient site planning to optimize your property.</p>
         <a href="services.html" class="cta-btn">View More</a>
       </div>
       <div class="service-box">
-        <img src="images/service7" alt="Project Management">
+        <img src="images/service3.jpg" alt="General Construction Works">
         <h3>General Construction Works</h3>
         <p>Managing your project from start to finish.</p>
         <a href="services.html" class="cta-btn">View More</a>
       </div>
     </div>
   </section>
-
-    <footer>
-  <p>&copy; 2024 GTA BUILDING CONSULT. All Rights Reserved.</p>
+  
+    
+  <footer>
+    <p>&copy; 2024 GTA BUILDING CONSULT. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
