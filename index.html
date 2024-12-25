@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GTA Building Consult - Landing Page</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/thompson_logo.jpg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="description" content="GTA Building Consult provides quality and innovative construction solutions for your needs.">
   <style>
     /* General Styles */
     * {
@@ -15,13 +18,17 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
 
     a {
-      text-decoration: lightblue;
-      color: #333;
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    a:hover {
+      color: #0056b3;
     }
 
     ul {
@@ -51,13 +58,9 @@
       gap: 15px;
     }
 
-    nav ul li {
-      list-style: circle;
-    }
-
     nav ul li a {
       color: white;
-      font-size: xx-small;
+      font-size: small;
       font-weight: lighter;
     }
 
@@ -66,7 +69,7 @@
       background: url('images/hero-bg.jpg') no-repeat center center/cover;
       color: white;
       text-align: center;
-      padding: 100px 20px;
+      padding: 50px 20px;
     }
 
     #hero h1 {
@@ -86,10 +89,11 @@
       border: none;
       font-size: 1rem;
       border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
 
     .cta-btn:hover {
-      background-color: #333;
+      background-color: burlywood;
     }
 
     /* About Section */
@@ -116,11 +120,17 @@
       width: 100%;
       max-width: 400px;
       border-radius: 10px;
+      animation: fadeIn 2s ease;
+      transition: transform 0.3s ease;
+    }
+
+    .about-images img:hover {
+      transform: scale(1.05);
     }
 
     /* Services Section */
     #services {
-      padding: 50px 20px;
+      padding: 20px 20px;
       background-color: #f4f4f4;
       text-align: center;
     }
@@ -132,6 +142,24 @@
       gap: 20px;
     }
 
+    @media (max-width: 600px) {
+    .service-container {
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .service-box {
+      width: 100%;
+      padding: 0;
+    }
+
+    .service-box img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
     .service-box {
       flex: 1;
       max-width: 300px;
@@ -139,12 +167,23 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
     }
 
     .service-box img {
       width: 100%;
       height: auto;
       border-radius: 10px;
+      animation: fadeIn 2s ease;
+      transition: transform 0.3s ease;
+    }
+
+    .service-box img:hover {
+      transform: scale(1.05);
     }
 
     .service-box h3 {
@@ -156,14 +195,50 @@
       margin: 10px 0;
     }
 
-    /* Footer */
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
+    .service-box .fa {
+      font-size: 2rem;
+      color: #007bff;
+      margin-bottom: 10px;
     }
 
+    @media (max-width: 600px) {
+    .service-box {
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .service-box img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+    footer .social-icons {
+      margin: 10px 0;
+    }
+
+    footer .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      color: #007bff;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -195,94 +270,218 @@
       }
     }
 
-    @media (max-width: 320px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
+    /* General Styles */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
 
-      .about-images img {
-      width: 100%;
-      max-width: 200px;
-      border-radius: 10px;
-      }
-
-      .logo img {
-        width: 30px;
-        height: 30px;
-      }
-
+    /* Collapsible Navbar */
+    @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
-        gap: 10px;
+        position: left;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        display: none;
       }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Hero Section Carousel */
+    #hero {
+      position: relative;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
     }
   </style>
 </head>
 <body>
-  <header>
+  <header id="navbar">
     <div class="logo">
-      <img class="logo-img" src="images/thompson_logo.jpg" width="50" height="50">
-      GTA Building Consult
+      <img class="logo-img" src="images/thompson_logo.jpg" width="50" height="50" alt="GTA Logo">
+      <span>GTA Building Consult</span>
     </div>
     <nav>
+      <span class="menu-toggle" aria-label="Toggle navigation">&#9776;</span>
       <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html" aria-label="About">About</a></li>
+        <li><a href="services.html" aria-label="Services">Services</a></li>
+        <li><a href="projects.html" aria-label="Projects">Projects</a></li>
+        <li><a href="contact.html" aria-label="Contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Your Comfort, Our Success</h1>
-      <p>Providing quality and innovative construction solutions for your needs</p>
-      <a href="services.html" class="cta-btn">Explore Our Services</a>
-    </div>
-  </section>
+  <main>
+    <section id="hero">
+      <div class="carousel">
+        <img src="images/IMG-20241225-WA0008.jpg" alt="Hero Image 1" loading="lazy">
+        <img src="images/hero-bg.jpg" alt="Hero Image 2" loading="lazy">
+        <img src="images/building1.jpg" alt="Hero Image 3" loading="lazy">
+      </div>
+      <div class="hero-content">
+        <h1>Your Comfort, Our Success</h1>
+        <p>Providing quality and innovative construction solutions for your needs</p>
+        <a href="services.html" class="cta-btn" aria-label="Explore Our Services">Explore Our Services</a>
+      </div>
+    </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>Welcome to GTA Building Consult, where innovative design meets expert project management. We are a dedicated team of professionals committed to delivering top-notch services in structural design, site planning, and project management... <a class="learn-more-button" href="about.html">Learn More</a></p>
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Welcome to GTA Building Consult, where innovative design meets expert project management. We are a dedicated team of professionals committed to delivering top-notch services in structural design, site planning, and project management... <a class="learn-more-button" href="about.html">Learn More</a></p>
+        </div>
+        <div class="about-images">
+          <img src="images/building1.jpg" alt="Construction Image 1" loading="lazy">
+          <img src="images/building2.jpg" alt="Construction Image 2" loading="lazy">
+        </div>
       </div>
-      <div class="about-images">
-        <img src="images/building1.jpg" alt="Construction Image 1">
-        <img src="images/building2.jpg" alt="Construction Image 2">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services-container">
-      <div class="service-box">
-        <img src="images/service2.jpg" alt="Land Survey">
-        <h3>Land Survey</h3>
-        <p>Reliable designs for all types of structures.</p>
-        <a href="services.html" class="cta-btn">View More</a>
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services-container">
+        <div class="service-box">
+          <i class="fa fa-map" aria-hidden="true"></i>
+          <img src="images/service2.jpg" alt="Land Survey" loading="lazy">
+          <h3>Land Survey</h3>
+          <p>Reliable designs for all types of structures.</p>
+          <a href="services.html" class="cta-btn">View More</a>
+        </div>
+        <div class="service-box">
+          <i class="fa fa-pencil-square" aria-hidden="true"></i>
+          <img src="images/service1.jpg" alt="Drawing of Building Plan" loading="lazy">
+          <h3>Drawing Of Building Plan</h3>
+          <p>Efficient site planning to optimize your property.</p>
+          <a href="services.html" class="cta-btn">View More</a>
+        </div>
+        <div class="service-box">
+          <i class="fa fa-building" aria-hidden="true"></i>
+          <img src="images/service3.jpg" alt="General Construction Works" loading="lazy">
+          <h3>General Construction Works</h3>
+          <p>Managing your project from start to finish.</p>
+          <a href="services.html" class="cta-btn">View More</a>
+        </div>
       </div>
-      <div class="service-box">
-        <img src="images/service1.jpg" alt="Drawing of Building Plan">
-        <h3>Drawing Of Building Plan</h3>
-        <p>Efficient site planning to optimize your property.</p>
-        <a href="services.html" class="cta-btn">View More</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <p>GTA Building Consult is a leading construction consultancy firm providing top-notch services in building plans, land surveys, and more.</p>
       </div>
-      <div class="service-box">
-        <img src="images/service3.jpg" alt="General Construction Works">
-        <h3>General Construction Works</h3>
-        <p>Managing your project from start to finish.</p>
-        <a href="services.html" class="cta-btn">View More</a>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <ul>
+      <li><a href="contact.html"> <h3>Contact Us</h3></a></li></ul>
+        <p><i class="fas fa-phone-alt"></i> +233(0) 547 544 483</p>
+        <p><i class="fas fa-envelope"></i> gtabuildingconsult@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
+      </div>
+      <div class="footer-column">
+        <h3>Working Hours</h3>
+        <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+        <p>Sat: 10:00 AM - 4:00 PM</p>
+        <p>Sun: Closed</p>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
     </div>
-  </section>
-  
-    
-  <footer>
-    <p>&copy; 2024 GTA BUILDING CONSULT. All Rights Reserved.</p>
+    <hr class="footer-separator">
+    <p>&copy; 2024 GTA Building Consult. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    // Collapsible Navbar
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Navbar Hide on Scroll
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        navbar.style.top = '-70px';
+      } else {
+        navbar.style.top = '0';
+      }
+      lastScrollTop = scrollTop;
+    });
+
+    // Hero Section Carousel
+    const carousel = document.querySelector('.carousel');
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % carousel.children.length;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 3000);
+  </script>
 </body>
 </html>

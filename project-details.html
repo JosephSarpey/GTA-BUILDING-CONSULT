@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/x-icon" href="/images/thompson_logo.jpg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Details | GTA Building Consult</title>
+  <title>GTA Building Consult - Landing Page</title>
+  <link rel="icon" href="images/thompson_logo.jpg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="description" content="GTA Building Consult provides quality and innovative construction solutions for your needs.">
 </head>
 <body>
-  <header>
-    <div class="logo">GTA Building Consult</div>
-    <nav>
+  <header class="navbar">
+    <div class="logo">
+      <img class="logo-img" src="images/thompson_logo.jpg" width="50" height="50" alt="GTA Building Consult Logo">
+      GTA Building Consult
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <nav class="nav-menu">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -31,8 +39,67 @@
     </div>
   </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <p>GTA Building Consult is a leading construction consultancy firm providing top-notch services in building plans, land surveys, and more.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <ul>
+      <li><a href="contact.html"> <h3>Contact Us</h3></a></li></ul>
+        <p><i class="fas fa-phone-alt"></i> +233(0) 547 544 483</p>
+        <p><i class="fas fa-envelope"></i> gtabuildingconsult@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
+      </div>
+      <div class="footer-column">
+        <h3>Working Hours</h3>
+        <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+        <p>Sat: 10:00 AM - 4:00 PM</p>
+        <p>Sun: Closed</p>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-separator">
     <p>&copy; 2024 GTA Building Consult. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.nav-menu').classList.toggle('open');
+    });
+
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+      let navbar = document.querySelector('.navbar');
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        navbar.style.top = '-100px'; // Adjust this value based on your navbar height
+      } else {
+        navbar.style.top = '0';
+      }
+      lastScrollTop = scrollTop;
+    });
+  </script>
+
 </body>
 </html>
