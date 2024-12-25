@@ -121,11 +121,19 @@
       let navbar = document.querySelector('.navbar');
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > lastScrollTop) {
-        navbar.style.top = '-100px'; // Adjust this value based on your navbar height
+        navbar.style.top = '-70px'; // Adjust this value based on your navbar height
       } else {
         navbar.style.top = '0';
       }
       lastScrollTop = scrollTop;
+    });
+
+        // Media query for smaller screens
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+    mediaQuery.addListener((e) => {
+      if (e.matches) {
+        navbar.style.top = '0';
+      }
     });
   </script>
 </body>

@@ -451,6 +451,8 @@
     <p>&copy; 2024 GTA Building Consult. All Rights Reserved.</p>
   </footer>
 
+  </footer>
+
   <script>
     // Collapsible Navbar
     const menuToggle = document.querySelector('.menu-toggle');
@@ -467,21 +469,24 @@
     window.addEventListener('scroll', () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > lastScrollTop) {
-        navbar.style.top = '-70px';
+        navbar.style.top = '-90px';
       } else {
         navbar.style.top = '0';
       }
       lastScrollTop = scrollTop;
     });
 
+    // Media query for smaller screens
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    mediaQuery.addListener((e) => {
+      if (e.matches) {
+        navbar.style.top = '0';
+      }
+    });
+
     // Hero Section Carousel
     const carousel = document.querySelector('.carousel');
     let index = 0;
-
-    setInterval(() => {
-      index = (index + 1) % carousel.children.length;
-      carousel.style.transform = `translateX(-${index * 100}%)`;
-    }, 3000);
-  </script>
+    </script>
 </body>
 </html>
