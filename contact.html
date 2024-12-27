@@ -139,16 +139,65 @@
       border-radius: 5px;
     }
 
-    form button {
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+    .cta-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 8px 15px rgba(255, 75, 43, 0.3);
+  position: relative;
+  overflow: hidden;
+}
 
-    form button:hover {
-      background-color: #0056b3;
-    }
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(255, 75, 43, 0.4);
+}
+
+.cta-btn:hover::before {
+  transform: scale(1);
+}
+
+.cta-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 10px rgba(255, 75, 43, 0.2);
+}
+
+/* Dark Mode Variation */
+.cta-btn.cta-dark {
+  background: linear-gradient(135deg, #37474f, #263238);
+  box-shadow: 0 8px 15px rgba(55, 71, 79, 0.3);
+}
+
+.cta-btn.cta-dark:hover {
+  box-shadow: 0 12px 20px rgba(55, 71, 79, 0.4);
+}
+
+.cta-btn.cta-dark:hover::before {
+  background: rgba(255, 255, 255, 0.1);
+}
 
     .contact-info {
       background: rgba(0, 0, 0, 0.8);
@@ -223,7 +272,8 @@
         <input type="text" id="subject" name="subject" placeholder="Message Subject" required>
         <label for="message">Message:</label>
         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button class="fa fa-paper-plane" type="submit">Send Message</button>
+        <button class="cta-btn" type="submit">
+        <i class="fa fa-paper-plane"></i>Send Message</button>
       </form>
     </div>
   </section>
