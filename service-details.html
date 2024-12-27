@@ -9,6 +9,141 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <style>
+    /* General styling for carousel */
+    .carousel .slide {
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+      margin-bottom: 20px;
+    }
+
+    .carousel .slide img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease; /* Animation for scaling */
+    }
+
+    .carousel .slide img:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    .carousel .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Grid styling for larger screens */
+    .static-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid with 3 or more images */
+      gap: 20px;
+    }
+
+    .static-gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease; /* Animation for scaling */
+    }
+
+    .static-gallery img:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    .static-gallery .caption {
+      text-align: center;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    /* Media query for smaller screens: display carousel */
+    @media (max-width: 768px) {
+      .static-gallery {
+        display: none; /* Hide static gallery on small screens */
+      }
+
+      .carousel {
+        display: block; /* Show carousel on small screens */
+      }
+
+      .carousel .caption {
+        font-size: 12px;
+      }
+    }
+
+    /* Media query for larger screens: display static gallery with captions */
+    @media (min-width: 769px) {
+      .carousel {
+        display: none; /* Hide carousel on larger screens */
+      }
+
+      .static-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+        gap: 20px;
+      }
+
+      .static-gallery img {
+        cursor: pointer;
+        border-radius: 10%;
+      }
+    }
+
+    /* Lightbox styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      transition: transform 0.3s ease; /* Animation for scaling */
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Fade-in animation for lightbox image */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -23,7 +158,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -34,59 +169,349 @@
     <section id="service-details">
       <h1>Service Details</h1>
       <article>
-        <h2>Service: Drawing Of Building Plans</h2>
-        <div class="gallery">
-          <img src="images/IMG-20241225-WA0011.jpg" alt="Drawing Of Building Plans Image 1">
-          <img src="images/IMG-20241225-WA0022.jpg" alt="Drawing Of Building Plans Image 2">
-          <img src="images/IMG-20241225-WA0008.jpg" alt="Drawing Of Building Plans Image 3">
+        <h2>Service: Design Of Building Plans</h2>
+        <h3>School Design</h3>
+        <div class="static-gallery">
+          <div>
+            <img src="images/school-front.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption">Front View</div>
+          </div>
+          <div>
+            <img src="images/school-side.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption">Side View</div>
+          </div>
+          <div>
+            <img src="images/school-aerial.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <div class="slide">
+            <img src="images/school-front.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption">Front View</div>
+          </div>
+          <div class="slide">
+            <img src="images/school-side.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption">Side View</div>
+          </div>
+          <div class="slide">
+            <img src="images/school-aerial.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
         </div>
       </article>
+
+      <article>
+        <h3>Residential Building Design</h3>
+        <div class="static-gallery">
+          <div>
+            <img src="images/IMG-20241225-WA0022.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption">Front View</div>
+          </div>
+          <div>
+            <img src="images/IMG-20241225-WA0013.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption">Side View</div>
+          </div>
+          <div>
+            <img src="images/IMG-20241225-WA0009.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div>
+            <img src="images/IMG-20241225-WA0008.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Front View</div>
+          </div>
+          <div>
+            <img src="images/IMG-20241225-WA0014.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Front View</div>
+          </div>
+          <div>
+            <img src="images/IMG-20241225-WA0010.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div>
+            <img src="images/IMG-20241225-WA0005.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div>
+            <img src="images/IMG-20241225-WA0007.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div>
+            <img src="images/IMG-20241225-WA0006.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0022.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption">Front View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0005.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption">Side View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0006.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0007.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0008.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0009.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0010.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0013.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0014.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0016.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0017.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0018.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0019.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0020.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0021.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+          <div class="slide">
+            <img src="images/IMG-20241225-WA0022.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption">Aerial View</div>
+          </div>
+        </div>
+      </article>
+
       <article>
         <h2>Service: Land Survey</h2>
-        <div class="gallery">
-          <img src="images/service1-detail1.jpg" alt="Land Survey Image 1">
-          <img src="images/service1-detail2.jpg" alt="Land Survey Image 2">
-          <img src="images/service1-detail3.jpg" alt="Land Survey Image 3">
+        <h3></h3>
+        <div class="static-gallery">
+          <div>
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <div class="slide">
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
         </div>
       </article>
+
       <article>
-        <h2>Service: Building Permit Acquisition</h2>
-        <div class="gallery">
-          <img src="images/service1-detail1.jpg" alt="Building Permit Acquisition Image 1">
-          <img src="images/service1-detail2.jpg" alt="Building Permit Acquisition Image 2">
-          <img src="images/service1-detail3.jpg" alt="Building Permit Acquisition Image 3">
+        <h2>Service: Plasterboard, P.O.P. and  Acoustic Ceiling Installation with Television Unit Set</h2>
+        <h3></h3>
+        <div class="static-gallery">
+          <div>
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <div class="slide">
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
         </div>
       </article>
-      <article>
-        <h2>Service: Building Consultancy</h2>
-        <div class="gallery">
-          <img src="images/service1-detail1.jpg" alt="Building Consultancy Image 1">
-          <img src="images/service1-detail2.jpg" alt="Building Consultancy Image 2">
-          <img src="images/service1-detail3.jpg" alt="Building Consultancy Image 3">
-        </div>
-      </article>
-      <article>
-        <h2>Service: Plasterboard, P.O.P. and Acoustic Ceiling Installation with Television Unit Set</h2>
-        <div class="gallery">
-          <img src="images/service1-detail1.jpg" alt="Plasterboard Installation Image 1">
-          <img src="images/service1-detail2.jpg" alt="Plasterboard Installation Image 2">
-          <img src="images/service1-detail3.jpg" alt="Plasterboard Installation Image 3">
-        </div>
-      </article>
+
       <article>
         <h2>Service: Construction Project Supervision, Monitoring & Evaluation</h2>
-        <div class="gallery">
-          <img src="images/service1-detail1.jpg" alt="Construction Project Supervision Image 1">
-          <img src="images/service1-detail2.jpg" alt="Construction Project Supervision Image 2">
-          <img src="images/service1-detail3.jpg" alt="Construction Project Supervision Image 3">
+        <h3></h3>
+        <div class="static-gallery">
+          <div>
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <div class="slide">
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
         </div>
       </article>
+
       <article>
-        <h2>Service: General Construction Works</h2>
-        <div class="gallery">
-          <img src="images/service1-detail1.jpg" alt="General Construction Works Image 1">
-          <img src="images/service1-detail2.jpg" alt="General Construction Works Image 2">
-          <img src="images/service1-detail3.jpg" alt="General Construction Works Image 3">
+        <h2>Service:  General Construction Works</h2>
+        <h3></h3>
+        <div class="static-gallery">
+          <div>
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <div class="slide">
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h2>Service: Building Permit Acuisition</h2>
+        <h3></h3>
+        <div class="static-gallery">
+          <div>
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <div class="slide">
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h2>Service: Building Consultancy </h2>
+        <h3></h3>
+        <div class="static-gallery">
+          <div>
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div>
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <div class="slide">
+            <img src="images/.jpg" alt="Front View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Side View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
+          <div class="slide">
+            <img src="images/.jpg" alt="Aerial View of school building" onclick="openLightbox(this)">
+            <div class="caption"></div>
+          </div>
         </div>
       </article>
     </section>
@@ -94,10 +519,6 @@
 
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-column">
-        <h3>About Us</h3>
-        <p>GTA Building Consult is a leading construction consultancy firm providing top-notch services in building plans, land surveys, and more.</p>
-      </div>
       <div class="footer-column">
         <h3>Quick Links</h3>
         <ul>
@@ -110,7 +531,8 @@
       </div>
       <div class="footer-column">
         <ul>
-      <li><a href="contact.html"> <h3>Contact Us</h3></a></li></ul>
+          <li><a href="contact.html"> <h3>Contact Us</h3></a></li>
+        </ul>
         <p><i class="fas fa-phone-alt"></i> +233(0) 547 544 483</p>
         <p><i class="fas fa-envelope"></i> gtabuildingconsult@gmail.com</p>
         <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
@@ -124,10 +546,10 @@
       <div class="footer-column">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/gta_building" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/gtabuildingconsult?igsh=MWhkY3F6MjI1MjZxcg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </div>
@@ -136,10 +558,12 @@
   </footer>
 
   <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
+    <span class="close" onclick="closeLightbox()">&times;</span>
     <img class="lightbox-content" id="lightbox-img">
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
     document.querySelector('.hamburger').addEventListener('click', function() {
       document.querySelector('.nav-menu').classList.toggle('open');
@@ -157,35 +581,30 @@
       lastScrollTop = scrollTop;
     });
 
-        // Media query for smaller screens
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    mediaQuery.addListener((e) => {
-      if (e.matches) {
-        navbar.style.top = '0';
-      }
-    });
-
-    // Lightbox functionality
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const close = document.querySelector('.close');
-
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', function() {
-        lightbox.style.display = 'block';
-        lightboxImg.src = this.src;
+    // Initialize carousel for gallery
+    $(document).ready(function() {
+      $('.carousel').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: true,
+        adaptiveHeight: true
       });
     });
 
-    close.addEventListener('click', function() {
-      lightbox.style.display = 'none';
-    });
+    // Open lightbox function
+    function openLightbox(element) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightbox.style.display = 'flex';
+      lightboxImg.src = element.src;
+    }
 
-    lightbox.addEventListener('click', function(e) {
-      if (e.target !== lightboxImg) {
-        lightbox.style.display = 'none';
-      }
-    });
+    // Close lightbox function
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
   </script>
 </body>
 </html>
