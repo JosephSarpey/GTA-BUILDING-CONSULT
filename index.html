@@ -457,15 +457,15 @@
     // Collapsible Navbar
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('nav ul');
-
+  
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
-
+  
     // Navbar Hide on Scroll
     let lastScrollTop = 0;
     const navbar = document.getElementById('navbar');
-
+  
     window.addEventListener('scroll', () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > lastScrollTop) {
@@ -475,7 +475,7 @@
       }
       lastScrollTop = scrollTop;
     });
-
+  
     // Media query for smaller screens
     const mediaQuery = window.matchMedia('(max-width: 768px)');
     mediaQuery.addListener((e) => {
@@ -483,10 +483,18 @@
         navbar.style.top = '0';
       }
     });
-
+  
     // Hero Section Carousel
     const carousel = document.querySelector('.carousel');
+    const images = carousel.querySelectorAll('img');
     let index = 0;
-    </script>
+  
+    function showNextImage() {
+      index = (index + 1) % images.length;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+  
+    setInterval(showNextImage, 3000); // Change image every 3 seconds
+  </script>
 </body>
 </html>
