@@ -14,7 +14,7 @@ body {
 
 @media screen and (max-width: 768px) {
   body {
-    margin-top: 20px; /* Adjusted margin for smaller screens */
+    margin-top: 50px; /* Adjusted margin for smaller screens */
   }
   
 }
