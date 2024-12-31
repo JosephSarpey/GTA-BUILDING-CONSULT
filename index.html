@@ -122,18 +122,38 @@
       text-align: center;
     }
 
-    .services-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+/* Base styles for the service container */
+.services-wrapper { /* Parent wrapper for all services */
+  display: grid; /* Enable grid layout */
+  grid-template-columns: 1fr; /* Single column by default */
+  gap: 20px; /* Space between grid items */
+  padding: 20px;
+  max-width: 1200px; /* Restrict maximum width */
+  margin: 0 auto; /* Center the grid */
+}
 
-    @media (max-width: 600px) {
-    .service-container {
-      width: 100%;
-      padding: 0 10px;
-    }
+.service-container { /* Individual service container */
+  text-align: center; /* Center-align text */
+  padding: 20px;
+  border: 1px solid #ddd; /* Add a light border for better structure */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* Background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.service-container img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 16px; /* Space below the image */
+}
+
+/* For larger screens (tablets and up) */
+@media (min-width: 768px) {
+  .services-wrapper {
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+  }
+}
+
 
     .service-box {
       width: 100%;
@@ -184,7 +204,7 @@
 
     .service-box .fa {
       font-size: 2rem;
-      color: #007bff;
+      color: #555;
       margin-bottom: 10px;
     }
 
@@ -342,7 +362,7 @@
       <h2>About Us</h2>
       <div class="about-content">
         <div class="about-text">
-          <p>Welcome to GTA Building Consult, where innovative design meets expert project management. We are a dedicated team of professionals committed to delivering top-notch services in structural design, site planning, and project management... <a class="learn-more-button" href="about.html">Learn More</a></p>
+          <p>Welcome to GTA Building Consult, where innovative design meets expert project management. We are a dedicated team of professionals committed to delivering top-notch services in structural design, site planning, and project management... <a class="learn-more-button" href="about.html">Learn More...</a></p>
         </div>
         <div class="about-images">
           <img src="images/building1.jpg" alt="Construction Image 1" loading="lazy">
@@ -353,26 +373,26 @@
 
     <section id="services">
       <h2>Our Services</h2>
-      <div class="services-container">
+      <div class="services-wrapper service-container">
         <div class="service-box">
           <i class="fa fa-map" aria-hidden="true"></i>
           <img src="images/service2.jpg" alt="Land Survey" loading="lazy">
           <h3>Land Survey</h3>
-          <p>Reliable designs for all types of structures.</p>
+          <p>Effective survey and inspection of lands.</p>
           <a href="services.html" class="cta-btn">View More</a>
         </div>
         <div class="service-box">
           <i class="fa fa-pencil-square" aria-hidden="true"></i>
           <img src="images/service1.jpg" alt="Drawing of Building Plan" loading="lazy">
           <h3>Drawing Of Building Plan</h3>
-          <p>Efficient site planning to optimize your property.</p>
+          <p>Innovative and reliable plans for all types of buildings.</p>
           <a href="services.html" class="cta-btn">View More</a>
         </div>
         <div class="service-box">
           <i class="fa fa-building" aria-hidden="true"></i>
           <img src="images/service3.jpg" alt="General Construction Works" loading="lazy">
           <h3>General Construction Works</h3>
-          <p>Managing your project from start to finish.</p>
+          <p>For All types of Construction Works, We've Got You.</p>
           <a href="services.html" class="cta-btn">View More</a>
         </div>
       </div>
