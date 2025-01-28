@@ -41,6 +41,14 @@ header {
     margin-right: 10px;
 }
 
+div.logo a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 nav ul {
     display: flex;
     gap: 15px;
