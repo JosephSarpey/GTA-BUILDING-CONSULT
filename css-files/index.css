@@ -45,10 +45,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #555;
+    /* background-color: #555; */
     background-color: #333;
+    /* color: #fff; */
     color: white;
-    padding: 20px 30px;
+    /* padding: 15px 15px; */
+    /* padding: 20px 30px; */
     /* position: fixed;  */
     top: 0;
     left: 0;
@@ -79,10 +81,20 @@ div.logo a {
     align-items: center;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
 nav ul {
     list-style: none;
     display: flex;
     /* gap: 20px; */
+    /* gap: 2px; */
     gap: 15px;
 }
 
@@ -303,10 +315,72 @@ html {
 /* Footer */
 footer {
     background-color: #333;
+    font-size: 15px;
+    /* color: #fff; */
     color: white;
+    /* padding: 20px 0; */
     text-align: center;
     padding: 10px;
+
 }
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 35px;
+    padding: 0 20px;
+}
+  
+.footer-column {
+    text-align: left;
+}
+  
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+  
+.footer-column p,
+.footer-column ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+  
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+  
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+  
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+  
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+  
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+  
+.social-icons a:hover {
+    color: #bbb;
+}
+  
+.footer-separator {
+    border: 0;
+    height: 1px;
+    background: #444;
+    margin: 20px 0;
+}
+  
 
 /* Animations */
 @keyframes fadeIn {
@@ -320,94 +394,123 @@ footer {
     }
 }
 
-/* Service Section For larger screens (tablets and up) */
+/* Service Section Styles For larger screens (tablets and up)... */
 @media screen and (min-width: 768px) {
     .services-wrapper {
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
     }
 
-  .service-box {
-    width: 100%;
-    padding: 0;
-  }
+    .service-box {
+        width: 100%;
+        padding: 0;
+    }
 
-  .service-box img {
-    width: 100%;
-    height: auto;
-  }
+    .service-box img {
+        width: 100%;
+        height: auto;
+    }
 
-  .service-box {
-    flex: 1;
-    max-width: 300px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
+    .service-box {
+        flex: 1;
+        max-width: 300px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
 
-  .service-box:hover {
-    transform: translateY(-5px);
-  }
+    .service-box:hover {
+        transform: translateY(-5px);
+    }
 
-  .service-box img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    animation: fadeIn 2s ease;
-    transition: transform 0.3s ease;
-  }
+    .service-box img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        animation: fadeIn 2s ease;
+        transition: transform 0.3s ease;
+    }
 
-  .service-box img:hover {
-    transform: scale(1.05);
-  }
+    .service-box img:hover {
+        transform: scale(1.05);
+    }
 
-  .service-box h3 {
-    margin-top: 10px;
-    font-size: 1.2rem;
-  }
+    .service-box h3 {
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
 
-  .service-box p {
-    margin: 10px 0;
-  }
+    .service-box p {
+        margin: 10px 0;
+    }
 
-  .service-box .fa {
-    font-size: 2rem;
-    color: #555;
-    margin-bottom: 10px;
-  }
+    .service-box .fa {
+        font-size: 2rem;
+        color: #555;
+        margin-bottom: 10px;
+    }
 }
 
+/* services section styles for smaller screens... */
 @media screen and (max-width: 600px) {
-  .service-box {
-    width: 100%;
-    padding: 0 10px;
-  }
-
-  .service-box img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      align-items: center;
-      /* font-size: xx-small; */
+    .service-box {
+        width: 100%;
+        padding: 0 10px;
     }
 
-    nav ul li a {
+    .service-box img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Styles for tablet and smaller screens*/
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        font-size: xx-small;
+        background-color: #333;
+        position: absolute;
+        /* top: 100%; */
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 5;
+        display: none;
+    }
+  
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-menu ul li a {
         padding: 12px 25px;
     }
 
-    /* .menu-toggle {
-        display: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-    } */
+    .nav-menu ul.show {
+        display: flex;
+    }
+  
+    .menu-toggle {
+        display: block;
+        /* font-size: 1.5rem; */
+        /* cursor: pointer; */
+    }  
 
     section {
         padding: 20px 10px;
@@ -424,43 +527,46 @@ footer {
     }
 
     #hero p {
-      font-size: 1rem;
+    font-size: 1rem;
     }
 
     .cta-btn {
         /* font-size: 1rem; */
         font-size: 0.9rem;
+        /* padding: 12px 25px; */
         padding: 8px 15px;
     }
 
     .about-content {
-      flex-direction: column;
+        flex-direction: column;
     }
 
-    .services-container {
-      flex-direction: column;
-      gap: 20px;
+    .service-container {
+        flex-direction: column;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+ 
+}   
+
+/* for smaller screens... */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+    
+    #hero h1 {
+        /* font-size: 2.5rem; */
+      font-size: 2rem;
+    }
+  
+    #hero p {
+        /* font-size: 1.2rem; */
+        font-size: 1rem;
+    }
+  
+    .cta-btn {
+      padding: 12px 25px;
+      font-size: 1rem;
     }
 }
-
-/* Collapsible Navbar for smaller screens*/
-@media screen and (max-width: 768px) {
-    nav ul {
-      top: 100%;
-      left: 0;
-      background-color: #333;
-      /* position: absolute; */
-      position: absolute;
-      width: 100%;
-      padding: 20px;
-      display: none;
-    }
-
-    nav ul.show {
-      display: flex;
-    }
-
-    .menu-toggle {
-      display: block;
-    }   
-}   
