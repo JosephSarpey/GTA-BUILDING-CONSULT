@@ -19,9 +19,13 @@
         </a>
       </div>
 
-      <!-- navigation menu -->
-      <nav class = nav-menu>
-        <span class="menu-toggle" aria-label="Toggle navigation">&#9776;</span>
+      <!-- Navbar Toggle Button -->
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        &#9776;
+      </button>
+
+      <!-- Navbar Menu -->
+      <nav class="nav-menu" id="nav-menu">
         <ul>
           <li><a href="about.html" aria-label="About">About</a></li>
           <li><a href="services.html" aria-label="Services">Services</a></li>
@@ -34,11 +38,38 @@
     <main>
       <!--  -->
       <section id="hero">
-        <div class="carousel">
-          <img src="images/IMG-20241225-WA0022.jpg" alt="Hero Image 1" loading="lazy">
-          <img src="images/hero-bg.jpg" alt="Hero Image 2" loading="lazy">
-          <img src="images/building1.jpg" alt="Hero Image 3" loading="lazy">
+        <!-- Carousel Controls -->
+        <div class="carousel-controls">
+          <button class="carousel-control prev" aria-label="Previous Image">❮</button>
+          <button class="carousel-control pause-play" aria-label="Pause Carousel">⏸</button>
+          <button class="carousel-control next" aria-label="Next Image">❯</button>
         </div>
+
+        <!-- Hero Carousel -->
+        <div class="carousel">
+          <img
+            src="images/IMG-20241225-WA0022.jpg"
+            srcset="images/IMG-20241225-WA0022-small.jpg 480w, images/IMG-20241225-WA0022-medium.jpg 800w, images/IMG-20241225-WA0022.jpg 1200w"
+            sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
+            alt="Hero Image 1"
+            loading="lazy"
+          />
+          <img
+            src="images/hero-bg.jpg"
+            srcset="images/hero-bg-small.jpg 480w, images/hero-bg-medium.jpg 800w, images/hero-bg.jpg 1200w"
+            sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
+            alt="Hero Image 2"
+            loading="lazy"
+          />
+          <img
+            src="images/building1.jpg"
+            srcset="images/building1-small.jpg 480w, images/building1-medium.jpg 800w, images/building1.jpg 1200w"
+            sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
+            alt="Hero Image 3"
+            loading="lazy"
+          />
+        </div>
+
         <div class="hero-content">
           <h1>Your Comfort, Our Success</h1>
           <p>Providing quality and innovative construction solutions for your needs</p>
