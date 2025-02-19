@@ -29,41 +29,72 @@ mediaQuery.addEventListener('change', (e) => {
   }
 });
 
-// Carousel Functionality
-const carousel = document.querySelector('.carousel');
-const images = carousel.querySelectorAll('img');
+// // Carousel Functionality
+// const carousel = document.querySelector('.carousel');
+// const images = carousel.querySelectorAll('img');
 
-let index = 0;
-let interval = 3000; // 3 seconds
-let carouselInterval;
+// let index = 0;
+// let interval = 3000; // 3 seconds
+// let carouselInterval;
 
 
-// Show next image
-function showNextImage() {
-  index = (index + 1) % images.length;
-  updateCarousel();
-}
+// // Show next image
+// function showNextImage() {
+//   index = (index + 1) % images.length;
+//   updateCarousel();
+// }
 
-// Show previous image
-function showPrevImage() {
-  index = (index - 1 + images.length) % images.length;
-  updateCarousel();
-}
+// // Show previous image
+// function showPrevImage() {
+//   index = (index - 1 + images.length) % images.length;
+//   updateCarousel();
+// }
 
-// Update carousel position
-function updateCarousel() {
-  carousel.style.transform = `translateX(-${index * 100}%)`;
-}
+// // Update carousel position
+// function updateCarousel() {
+//   carousel.style.transform = `translateX(-${index * 100}%)`;
+// }
 
-// Start carousel autoplay
-function startCarousel() {
-  carouselInterval = setInterval(showNextImage, interval);
-}
+// // Start carousel autoplay
+// function startCarousel() {
+//   carouselInterval = setInterval(showNextImage, interval);
+// }
 
-// Initialize carousel
-function initCarousel() {
-  startCarousel();
-}
+// // Initialize carousel
+// function initCarousel() {
+//   startCarousel();
+// }
 
-// Initialize the carousel when the DOM is loaded
-document.addEventListener('DOMContentLoaded', initCarousel);
+// // Initialize the carousel when the DOM is loaded
+// document.addEventListener('DOMContentLoaded', initCarousel);
+
+// In your index.js
+document.addEventListener('DOMContentLoaded', function() {
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  let currentIndex = 0;
+  let interval = 5000; // 5 seconds
+  let carouselInterval;
+
+  function showNextItem() {
+    carouselItems[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    carouselItems[currentIndex].classList.add('active');
+  }
+
+  function startCarousel() {
+    carouselInterval = setInterval(showNextItem, interval);
+  }
+
+  function initCarousel() {
+    // Initialize first item
+    carouselItems[0].classList.add('active');
+    startCarousel();
+    
+    // Pause on hover
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+    carousel.addEventListener('mouseleave', startCarousel);
+  }
+
+  initCarousel();
+});
