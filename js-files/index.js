@@ -68,7 +68,6 @@ mediaQuery.addEventListener('change', (e) => {
 // // Initialize the carousel when the DOM is loaded
 // document.addEventListener('DOMContentLoaded', initCarousel);
 
-// In your index.js
 document.addEventListener('DOMContentLoaded', function() {
   const carouselItems = document.querySelectorAll('.carousel-item');
   let currentIndex = 0;
