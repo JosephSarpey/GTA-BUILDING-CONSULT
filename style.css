@@ -205,6 +205,7 @@ html {
   }
 }
 
+/* for service details page... or... to be confirmed later */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -301,7 +302,7 @@ section {
   margin: 0 auto;
 }
 
-/* Services Section */
+/* Services Page */
 #services {
   padding: 40px 20px;
 }
@@ -337,7 +338,7 @@ section {
 }
 
 
-/* Contact Section */
+/* Contact Page */
 .contact-section {
   background-color: #f9f9f9;
   padding: 60px 20px;
@@ -394,7 +395,7 @@ section {
   background-color: #555;
 }
 
-/* Responsive Design */
+/* Responsive Design for contact page */
 @media (max-width: 768px) {
   .contact-section h2 {
     font-size: 2em;
@@ -413,7 +414,7 @@ section {
 
 
 
-/* Projects Section */
+/* Projects Page */
 #projects {
   padding: 40px 20px;
 }
@@ -527,7 +528,7 @@ header {
   top: 0;
   left: 0;
   transition: top 0.3s;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .logo {
