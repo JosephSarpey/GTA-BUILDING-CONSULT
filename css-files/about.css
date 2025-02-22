@@ -1,0 +1,38 @@
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-image: url("image/about.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 80%;
+  margin-top: 50px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.about-color {
+  color: #555;
+}

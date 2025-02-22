@@ -1,170 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GTA Building Consult - Landing Page</title>
-  <link rel="icon" href="images/thompson_logo.jpg" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <meta name="description" content="GTA Building Consult provides quality and innovative construction solutions for your needs.">
-  <style>
-    body {
-      background-image: url('images/about.jpg');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: 100% 80%;
-    }
-    .navbar {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      transition: top 0.3s;
-    }
-    .menu-toggle {
-      display: none;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav ul.show {
-      display: block;
-    }
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      nav ul {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header class="navbar">
-    <div class="logo">
-      <img class="logo-img" src="images/thompson_logo.jpg" width="50" height="50" alt="GTA Building Consult Logo">
-      GTA Building Consult
-    </div>
-    <button class="hamburger" aria-label="Toggle navigation">
-      &#9776;
-    </button>
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="about w3-padding" style="max-width:1564px">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 about-color"><b>About Us</b></h3>
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Who We Are</h3>
-    <p>
-      At GTA Building Consult, we are committed to transforming visions into reality. As a leading architecture and construction consulting firm, we specialize in providing expert advice and project management services to clients across a variety of industries. Whether you’re building a dream home, a commercial space, or embarking on a large-scale development, our team of experienced professionals ensures your project is executed flawlessly from start to finish.
-    </p>
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Mission</h3>
-    <p>
-      Our mission is to deliver innovative and sustainable building solutions that meet the needs of our clients. We focus on quality, efficiency, and cost-effectiveness, ensuring that every project exceeds expectations while adhering to the highest industry standards. At GTA Building Consult, we believe in building strong relationships with our clients and working collaboratively to bring their ideas to life.
-    </p>
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Values</h3>
-    <p>
-  Integrity, excellence, and commitment are the core values that define GTA Building Consult. We pride ourselves on our attention to detail, transparency in communication, and dedication to customer satisfaction. We approach each project with passion and purpose, ensuring that every phase of the build is executed with precision and care.
-    </p>
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">What Sets Us Apart</h3>
-    <p>
-      What sets us apart is our client-focused approach. We don’t just provide advice—we partner with you throughout the entire process. From the initial concept through to project completion, our team of architects, engineers, and project managers work together to ensure that every aspect of your project is handled professionally and efficiently.
-    </p>
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Team</h3>
-    <p>
-      Our team consists of highly skilled architects, project managers, and construction experts who bring years of experience and knowledge to every project. We are passionate about creating spaces that inspire, and we take pride in providing custom solutions that are tailored to your specific needs. Our collaborative approach ensures that every project is a success.
-    </p>
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Sustainability and Innovation</h3>
-    <p>
-      We are dedicated to incorporating sustainable practices into every project. At GTA Building Consult, we understand the importance of environmental responsibility, which is why we prioritize energy-efficient solutions, sustainable materials, and environmentally friendly practices. We also embrace innovation in design and construction, ensuring that we stay ahead of industry trends and deliver cutting-edge solutions to our clients.
-    </p>
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
-    <p>
-      Ready to start your next project? Get in touch with us today and let’s discuss how GTA Building Consult can help turn your vision into reality. Whether you’re looking for expert advice or full-scale project management, we are here to guide you every step of the way.
-    </p>
-    <a href="contact.html">
-      <button class="w3-button w3-black w3-margin-bottom" type="submit">
-        <i class="fa fa-paper-plane"></i> Send Us A Message </button></a>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3>About Us</h3>
-        <p>GTA Building Consult is a leading construction consultancy firm providing top-notch services in building plans, land surveys, and more.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GTA Building Consult - Landing Page</title>
+    <link rel="icon" href="images/thompson_logo.jpg" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="css-files/header-footer.css" />
+    <link rel="stylesheet" href="css-files/about.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <meta name="description" content="GTA Building Consult provides quality and innovative construction solutions for your needs."/>
+  </head>
+  <body>
+    <header id="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img class="logo-img" src="images/thompson_logo.jpg" alt="GTA Logo"/>
+          <span>GTA Building Consult</span>
+        </a>
       </div>
-      <div class="footer-column">
-        <h3>Quick Links</h3>
+
+      <!-- Navbar Toggle Button -->
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        &#9776;
+      </button>
+
+      <!-- Navbar Menu -->
+      <nav class="nav-menu" id="nav-menu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" aria-label="Home">Home</a></li>
+          <li><a href="about.html" aria-label="About">About</a></li>
+          <li><a href="services.html" aria-label="Services">Services</a></li>
+          <li><a href="projects.html" aria-label="Projects">Projects</a></li>
+          <li><a href="contact.html" aria-label="Contact">Contact</a></li>
         </ul>
-      </div>
-      <div class="footer-column">
-        <ul>
-      <li><a href="contact.html"> <h3>Contact Us</h3></a></li></ul>
-        <p><i class="fas fa-phone-alt"></i> +233(0) 547 544 483</p>
-        <p><i class="fas fa-envelope"></i> gtabuildingconsult@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
-      </div>
-      <div class="footer-column">
-        <h3>Working Hours</h3>
-        <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-        <p>Sat: 10:00 AM - 4:00 PM</p>
-        <p>Sun: Closed</p>
-      </div>
-      <div class="footer-column">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://x.com/gta_building" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/gtabuildingconsult?igsh=MWhkY3F6MjI1MjZxcg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </nav>
+    </header>
+
+    <div class="about w3-padding" style="max-width: 1564px">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 about-color">
+        <b>About Us</b>
+      </h3>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+        Who We Are
+      </h3>
+      <p>
+        At GTA Building Consult, we are committed to transforming visions into
+        reality. As a leading architecture and construction consulting firm, we
+        specialize in providing expert advice and project management services to
+        clients across a variety of industries. Whether you’re building a dream
+        home, a commercial space, or embarking on a large-scale development, our
+        team of experienced professionals ensures your project is executed
+        flawlessly from start to finish.
+      </p>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+        Our Mission
+      </h3>
+      <p>
+        Our mission is to deliver innovative and sustainable building solutions
+        that meet the needs of our clients. We focus on quality, efficiency, and
+        cost-effectiveness, ensuring that every project exceeds expectations
+        while adhering to the highest industry standards. At GTA Building
+        Consult, we believe in building strong relationships with our clients
+        and working collaboratively to bring their ideas to life.
+      </p>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+        Our Values
+      </h3>
+      <p>
+        Integrity, excellence, and commitment are the core values that define
+        GTA Building Consult. We pride ourselves on our attention to detail,
+        transparency in communication, and dedication to customer satisfaction.
+        We approach each project with passion and purpose, ensuring that every
+        phase of the build is executed with precision and care.
+      </p>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+        What Sets Us Apart
+      </h3>
+      <p>
+        What sets us apart is our client-focused approach. We don’t just provide
+        advice—we partner with you throughout the entire process. From the
+        initial concept through to project completion, our team of architects,
+        engineers, and project managers work together to ensure that every
+        aspect of your project is handled professionally and efficiently.
+      </p>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+        Our Team
+      </h3>
+      <p>
+        Our team consists of highly skilled architects, project managers, and
+        construction experts who bring years of experience and knowledge to
+        every project. We are passionate about creating spaces that inspire, and
+        we take pride in providing custom solutions that are tailored to your
+        specific needs. Our collaborative approach ensures that every project is
+        a success.
+      </p>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+        Sustainability and Innovation
+      </h3>
+      <p>
+        We are dedicated to incorporating sustainable practices into every
+        project. At GTA Building Consult, we understand the importance of
+        environmental responsibility, which is why we prioritize
+        energy-efficient solutions, sustainable materials, and environmentally
+        friendly practices. We also embrace innovation in design and
+        construction, ensuring that we stay ahead of industry trends and deliver
+        cutting-edge solutions to our clients.
+      </p>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+        Contact Us
+      </h3>
+      <p>
+        Ready to start your next project? Get in touch with us today and let’s
+        discuss how GTA Building Consult can help turn your vision into reality.
+        Whether you’re looking for expert advice or full-scale project
+        management, we are here to guide you every step of the way.
+      </p>
+      <a href="contact.html">
+        <button class="w3-button w3-black w3-margin-bottom" type="submit">
+          <i class="fa fa-paper-plane"></i> Send Us A Message
+        </button>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column footer-about">
+          <!-- About -->
+          <h3>About Us</h3>
+          <p>
+            GTA Building Consult is a leading construction consultancy firm
+            providing top-notch services in building plans, land surveys, and
+            more.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-column footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacts -->
+        <div class="footer-column footer-contacts">
+          <h3>Contact Us</h3>
+          <address class="contacts">
+            <p><i class="fas fa-phone-alt"></i> +233(0) 547 544 483</p>
+            <p><i class="fas fa-envelope"></i> gtabuildingconsult@gmail.com</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown,
+              USA
+            </p>
+          </address>
+        </div>
+        <div class="footer-column working-hours">
+          <h3>Working Hours</h3>
+          <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+          <p>Sat: 10:00 AM - 4:00 PM</p>
+          <p>Sun: Closed</p>
         </div>
       </div>
-    </div>
-    <hr class="footer-separator">
-    <p>&copy; 2024 GTA Building Consult. All Rights Reserved.</p>
-  </footer>
 
-  <script>
-    document.querySelector('.hamburger').addEventListener('click', function() {
-      document.querySelector('.nav-menu').classList.toggle('open');
-    });
+      <!-- Follow us -->
+      <div class="footer-column follow-us">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" target="_blank" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://x.com/gta_building"
+            target="_blank"
+            aria-label="Twitter"
+            ><i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/gtabuildingconsult?igsh=MWhkY3F6MjI1MjZxcg=="
+            target="_blank"
+            aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gta-building-consult-8a561a352?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+            aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
 
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-      let navbar = document.querySelector('.navbar');
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop) {
-        navbar.style.top = '-100px'; // Adjust this value based on your navbar height
-      } else {
-        navbar.style.top = '0';
-      }
-      lastScrollTop = scrollTop;
-    });
+      <hr class="footer-separator" />
+      <p class="copyright">
+        &copy; 2024 GTA Building Consult. All Rights Reserved.
+      </p>
+    </footer>
 
-        // Media query for smaller screens
-        const mediaQuery = window.matchMedia('(max-width: 768px)');
-    mediaQuery.addListener((e) => {
-      if (e.matches) {
-        navbar.style.top = '0';
-      }
-    });
-  </script>
-</body>
+    <!-- script files -->
+    <script src="js-files/index.js"></script>
+  </body>
 </html>

@@ -93,6 +93,7 @@ div.logo a {
   font-weight: lighter;
   padding: 4px 10px;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .nav-menu ul li a:hover {
@@ -189,11 +190,16 @@ address {
   color: white;
   font-size: 15px;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 .social-icons a:hover {
   color: #bbb;
 }
+
+/* footer .social-icons a:hover {
+  color: #007bff;
+} */
 
 .footer-separator {
   border: 0;
@@ -313,7 +319,6 @@ address {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
-
 
 /* ===== Extra large devices (large laptops and desktops, 1200px and up) =====*/
 /* @media only screen and (min-width: 1200px) {...} */

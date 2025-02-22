@@ -6,257 +6,33 @@
   <title>GTA Building Consult - Landing Page</title>
   <link rel="icon" href="images/thompson_logo.jpg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css-files/header-footer.css" />
+  <link rel="stylesheet" href="css-files/contact.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <meta name="description" content="GTA Building Consult provides quality and innovative construction solutions for your needs.">
-
-  <style>
-    /* General Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #333;
-      color: white;
-      padding: 10px 20px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-img {
-      margin-right: 10px;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 15px;
-    }
-
-    nav ul li {
-      list-style: none;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    nav ul li a:hover {
-      color: #007bff;
-    }
-
-    /* Collapsible Navbar */
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        display: none;
-        background-color: #333;
-        width: 100%;
-        padding: 10px 0;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-        color: white;
-      }
-    }
-
-    @media (max-width: 768px) {
-  nav ul {
-    display: none; /* Hide the navbar by default */
-  }
-
-  nav ul.show {
-    display: flex; /* Show when toggled */
-  }
-
-  nav ul li a {
-    font-size: 10px; /* Adjust the font size for smaller screens */
-    padding: 10px 20px; /* Add padding for easier clicking */
-  }
-}
-
-
-    /* Contact Section */
-    #contact {
-      background-image: url('images/contact-bg-image.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 80px 20px;
-      color: #fff;
-      text-align: center;
-    }
-
-    .contact-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    form {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      border-radius: 5px;
-    }
-
-    form label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-
-    form input,
-    form textarea,
-    form button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: none;
-      border-radius: 5px;
-      resize: none;
-    }
-
-    .cta-btn {
-  display: inline-block;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  box-shadow: 0 8px 15px rgba(255, 75, 43, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
-  transform: scale(0);
-  transition: transform 0.5s ease-in-out;
-}
-
-.cta-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(255, 75, 43, 0.4);
-}
-
-.cta-btn:hover::before {
-  transform: scale(1);
-}
-
-.cta-btn:active {
-  transform: translateY(2px);
-  box-shadow: 0 4px 10px rgba(255, 75, 43, 0.2);
-}
-
-/* Dark Mode Variation */
-.cta-btn.cta-dark {
-  background: linear-gradient(135deg, #37474f, #263238);
-  box-shadow: 0 8px 15px rgba(55, 71, 79, 0.3);
-}
-
-.cta-btn.cta-dark:hover {
-  box-shadow: 0 12px 20px rgba(55, 71, 79, 0.4);
-}
-
-.cta-btn.cta-dark:hover::before {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-    .contact-info {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      border-radius: 5px;
-    }
-
-    /* Footer Section */
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 20px 0;
-    }
-
-    footer .footer-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    footer .footer-item h4 {
-      margin-bottom: 10px;
-    }
-
-    footer .social-icons a {
-      margin: 0 10px;
-      color: white;
-      font-size: 20px;
-      transition: color 0.3s;
-    }
-
-    footer .social-icons a:hover {
-      color: #007bff;
-    }
-  </style>
 </head>
 <body>
   <header id="navbar">
     <div class="logo">
-      <img class="logo-img" src="images/thompson_logo.jpg" width="50" height="50">
-      GTA Building Consult
+      <a href="index.html">
+        <img class="logo-img" src="images/thompson_logo.jpg" alt="GTA Logo"/>
+        <span>GTA Building Consult</span>
+      </a>
     </div>
-    <nav>
-      <span class="menu-toggle">&#9776;</span>
+
+    <!-- Navbar Toggle Button -->
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      &#9776;
+    </button>
+
+    <!-- Navbar Menu -->
+    <nav class="nav-menu" id="nav-menu">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" aria-label="Home">Home</a></li>
+        <li><a href="about.html" aria-label="About">About</a></li>
+        <li><a href="services.html" aria-label="Services">Services</a></li>
+        <li><a href="projects.html" aria-label="Projects">Projects</a></li>
+        <li><a href="contact.html" aria-label="Contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -264,7 +40,7 @@
   <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-container">
-      <form id="contact-form">
+      <form class="contact-form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="user_name" placeholder="Your Name" required>
         <label for="email">Email:</label>
@@ -279,79 +55,61 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3>About Us</h3>
-        <p>GTA Building Consult is a leading construction consultancy firm providing top-notch services in building plans, land surveys, and more.</p>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column footer-about">
+          <!-- About -->
+          <h3>About Us</h3>
+          <p>GTA Building Consult is a leading construction consultancy firm providing top-notch services in building plans, land surveys, and more.</p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-column footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacts -->
+        <div class="footer-column footer-contacts">
+          <h3>Contact Us</h3>
+          <address class = "contacts">
+            <p><i class="fas fa-phone-alt"></i> +233(0) 547 544 483</p>
+            <p><i class="fas fa-envelope"></i> gtabuildingconsult@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
+          </address>
+        </div>
+        <div class="footer-column working-hours">
+          <h3>Working Hours</h3>
+          <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+          <p>Sat: 10:00 AM - 4:00 PM</p>
+          <p>Sun: Closed</p>
+        </div>
       </div>
-      <div class="footer-column">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <ul>
-      <li><a href="contact.html"> <h3>Contact Us</h3></a></li></ul>
-        <p><i class="fas fa-phone-alt"></i> +233(0) 547 544 483</p>
-        <p><i class="fas fa-envelope"></i> gtabuildingconsult@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
-      </div>
-      <div class="footer-column">
-        <h3>Working Hours</h3>
-        <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
-        <p>Sat: 10:00 AM - 4:00 PM</p>
-        <p>Sun: Closed</p>
-      </div>
-      <div class="footer-column">
+
+      <!-- Follow us -->
+      <div class="footer-column follow-us">
         <h3>Follow Us</h3>
         <div class="social-icons">
           <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://x.com/gta_building" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           <a href="https://www.instagram.com/gtabuildingconsult?igsh=MWhkY3F6MjI1MjZxcg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.linkedin.com/in/gta-building-consult-8a561a352?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
-    </div>
-    <hr class="footer-separator">
-    <p>&copy; 2024 GTA Building Consult. All Rights Reserved.</p>
-  </footer>
+      
+      <hr class="footer-separator">
+      <p class = "copyright">&copy; 2024 GTA Building Consult. All Rights Reserved.</p>
+    </footer>
+    
+    <!-- script files -->
+    <script src="js-files/index.js"></script>
 
-  <script>
-    // Collapsible Navbar
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('nav ul');
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-
-    // Navbar Hide on Scroll
-    let lastScrollTop = 0;
-    const navbar = document.getElementById('navbar');
-
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop) {
-        navbar.style.top = '-100px';
-      } else {
-        navbar.style.top = '0';
-      }
-      lastScrollTop = scrollTop;
-    });    
-
-    // Media query for smaller screens
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    mediaQuery.addListener((e) => {
-      if (e.matches) {
-        navbar.style.top = '0';
-      }
-    });    
-  </script>
-</body>
+  </body>
 </html>
