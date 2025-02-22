@@ -18,7 +18,7 @@ h2 {
 }
 
 #contact {
-  background-image: url("images/contact-bg-image.jpg");
+  background-image: url("../images/contact-bg-image.jpg");
   background-size: cover;
   background-position: center;
   padding: 80px 20px;
