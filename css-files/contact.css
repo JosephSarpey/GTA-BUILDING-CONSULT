@@ -1,0 +1,149 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#contact {
+  background-image: url("images/contact-bg-image.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  /* border: 1px solid #ddd; */
+  border: none;
+  border-radius: 5px;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #333;
+  outline: none;
+}
+
+.contact-form button {
+  width: 100%;
+  color: #fff;
+  padding: 15px 30px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  resize: none;
+}
+
+/* Responsive Design for contact page */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 20px;
+  }
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 8px 15px rgba(255, 75, 43, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(255, 75, 43, 0.4);
+}
+
+.cta-btn:hover::before {
+  transform: scale(1);
+}
+
+.cta-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 10px rgba(255, 75, 43, 0.2);
+}
+
+/* Dark Mode Variation */
+.cta-btn.cta-dark {
+  background: linear-gradient(135deg, #37474f, #263238);
+  box-shadow: 0 8px 15px rgba(55, 71, 79, 0.3);
+}
+
+.cta-btn.cta-dark:hover {
+  box-shadow: 0 12px 20px rgba(55, 71, 79, 0.4);
+}
+
+.cta-btn.cta-dark:hover::before {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-info {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+}
