@@ -1,0 +1,85 @@
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  margin-top: 70px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+#project-details {
+    padding: 20px 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: fadeIn 1s ease-in-out;
+
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gallery img {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  /* section {
+    padding: 20px 10px;
+  } */
+
+  /* .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  } */
+}
