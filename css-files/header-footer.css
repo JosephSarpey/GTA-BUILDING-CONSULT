@@ -1,3 +1,8 @@
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
 /* ===== Header Styles ===== */
 header {
   display: flex;

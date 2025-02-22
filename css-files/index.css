@@ -226,6 +226,7 @@ main {
 
 .service-box {
   /* background: rgb(8, 122, 14); */
+  background: #fff;
   padding: 20px;
   /* padding: 10px 20px; */
   border-radius: 10px;
@@ -250,6 +251,7 @@ main {
 }
 
 .service-box p {
+  color: #555;
   margin-bottom: 15px;
 }
 
