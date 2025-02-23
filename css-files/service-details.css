@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  margin-top: 50px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* General styling for carousel */
+.carousel .slide {
+  position: relative;
+  opacity: 0;
+  -webkit-animation: fadeIn 0.5s forwards;
+  animation: fadeIn 0.5s forwards;
+  margin-bottom: 20px;
+}
+
+/* Section Styles */
+#service-details {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.carousel .slide img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.carousel .slide img:focus {
+  outline: 2px solid #00f;
+  transform: scale(1.1); /* Increased zoom effect for focus */
+}
+
+.carousel .caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.carousel .caption:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Grid styling for larger screens */
+.static-gallery {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); 
+  gap: 10px;
+}
+
+.static-gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.static-gallery img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.static-gallery img:focus {
+  outline: 2px solid #00f;
+  transform: scale(1.1); /* Increased zoom effect for focus */
+}
+
+.static-gallery .caption {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.static-gallery .caption:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+/* Media query for smaller screens: display carousel */
+@media (max-width: 768px) {
+  .static-gallery {
+    display: none; /* Hide static gallery on small screens */
+  }
+
+  .carousel {
+    display: block; /* Show carousel on small screens */
+  }
+
+  .carousel .caption {
+    font-size: 12px;
+  }
+}
+
+/* Media query for larger screens: display static gallery with captions */
+@media (min-width: 769px) {
+  .carousel {
+    display: none; /* Hide carousel on larger screens */
+  }
+
+  .static-gallery {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(300px, 1fr)
+    ); /* Flexible grid layout */
+    gap: 20px;
+  }
+
+  .static-gallery img {
+    cursor: pointer;
+  }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Lightbox styling */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Fade-in animation for lightbox image */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
