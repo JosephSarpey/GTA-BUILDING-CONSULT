@@ -38,13 +38,13 @@
     </header>
 
     <main>
-      <section id="hero">
+      <!-- <section id="hero">
         <div class="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="images/IMG-20241225-WA0022.jpg"
-                srcset="images/IMG-20241225-WA0022.jpg 480w, images/IMG-20241225-WA0022.jpg 800w, images/IMG-20241225-WA0022.jpg 1200w"
+                src="images/hero-bg-1.0.jpg"
+                srcset="images/facebook-logo.png 480w, images/hero-bg-1.0.jpg 800w, images/hero-bg-1.0.jpg 1200w"
                 sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
                 alt="Hero Image 1"
                 loading="lazy"
@@ -53,8 +53,8 @@
             </div>
             <div class="carousel-item">
               <img
-                src="images/hero-bg.jpg"
-                srcset="images/hero-bg.jpg 480w, images/hero-bg.jpg 800w, images/hero-bg.jpg 1200w"
+                src="images/hero-bg-2.0.jpg"
+                srcset="images/hero-bg-2s.jpg 480w, images/hero-bg-2.0.jpg 800w, images/hero-bg-2.0.jpg 1200w"
                 sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
                 alt="Hero Image 2"
                 loading="lazy"
@@ -63,8 +63,18 @@
             </div>
             <div class="carousel-item">
               <img
-                src="images/building1.jpg"
-                srcset="images/building1.jpg 480w, images/building1.jpg 800w, images/building1.jpg 1200w"
+                src="images/hero-bg-3.0.jpg"
+                srcset="images/hero-bg-3s.jpg 480w, images/hero-bg-3.0.jpg 800w, images/hero-bg-3.0.jpg 1200w"
+                sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
+                alt="Hero Image 3"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/hero-bg-4.0.jpg"
+                srcset="images/hero-bg-4s.jpg 480w, images/hero-bg-4.0.jpg 800w, images/hero-bg-4.0.jpg 1200w"
                 sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
                 alt="Hero Image 3"
                 loading="lazy"
@@ -79,7 +89,49 @@
           <p>Providing quality and innovative construction solutions for your needs</p>
           <a href="services.html" class="cta-btn" aria-label="Explore Our Services">Explore Our Services</a>
         </div>
+      </section> -->
+
+      <section id="hero">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <picture>
+                <source srcset="images/hero-bg-1.1s.jpg" media="(max-width: 600px)">
+                <source srcset="images/hero-bg-1.0.jpg" media="(min-width: 601px)">
+                <img src="images/hero-bg-1.0.jpg" alt="Hero Image 1" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="carousel-item">
+              <picture>
+                <source srcset="images/hero-bg-2s.jpg" media="(max-width: 600px)">
+                <source srcset="images/hero-bg-2.0.jpg" media="(min-width: 601px)">
+                <img src="images/hero-bg-2.0.jpg" alt="Hero Image 2" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="carousel-item">
+              <picture>
+                <source srcset="images/hero-bg-3s.jpg" media="(max-width: 600px)">
+                <source srcset="images/hero-bg-3.0.jpg" media="(min-width: 601px)">
+                <img src="images/hero-bg-3.0.jpg" alt="Hero Image 3" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="carousel-item">
+              <picture>
+                <source srcset="images/hero-bg-4s.jpg" media="(max-width: 600px)">
+                <source srcset="images/hero-bg-4.0.jpg" media="(min-width: 601px)">
+                <img src="images/hero-bg-4.0.jpg" alt="Hero Image 4" loading="lazy" decoding="async">
+              </picture>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <h1>Your Comfort, Our Success</h1>
+          <p>Providing quality and innovative construction solutions for your needs</p>
+          <a href="services.html" class="cta-btn" aria-label="Explore Our Services">Explore Our Services</a>
+        </div>
       </section>
+      
       
       <!-- About section -->
       <section id="about">
@@ -137,7 +189,6 @@
         <div class="footer-column footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
