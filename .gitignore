@@ -1,1 +1,7 @@
 .vscode/settings.json
+
+.hintrc
+css-files/ind.css
+css-files/index2.css
+css-files/style.css
+js-files/script.js
