@@ -11,49 +11,70 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <meta name="description" content="GTA Building Consult provides quality and innovative construction solutions for your needs.">
 </head>
-<body>
-  <header id="navbar">
-    <div class="logo">
-      <a href="index.html">
-        <img class="logo-img" src="images/thompson_logo.jpg" alt="GTA Logo"/>
-        <span>GTA Building Consult</span>
-      </a>
-    </div>
+  <body>
+    <header id="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img class="logo-img" src="images/thompson_logo.jpg" alt="GTA Logo"/>
+          <span>GTA Building Consult</span>
+        </a>
+      </div>
 
-    <!-- Navbar Toggle Button -->
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
-      &#9776;
-    </button>
+      <!-- Navbar Toggle Button -->
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        &#9776;
+      </button>
 
-    <!-- Navbar Menu -->
-    <nav class="nav-menu" id="nav-menu">
-      <ul>
-        <li><a href="index.html" aria-label="Home">Home</a></li>
-        <li><a href="about.html" aria-label="About">About</a></li>
-        <li><a href="services.html" aria-label="Services">Services</a></li>
-        <li><a href="projects.html" aria-label="Projects">Projects</a></li>
-        <li><a href="contact.html" aria-label="Contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+      <!-- Navbar Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul>
+          <li><a href="index.html" aria-label="Home">Home</a></li>
+          <li><a href="about.html" aria-label="About">About</a></li>
+          <li><a href="services.html" aria-label="Services">Services</a></li>
+          <li><a href="projects.html" aria-label="Projects">Projects</a></li>
+          <li><a href="contact.html" aria-label="Contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-container">
-      <form class="contact-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="user_name" placeholder="Your Name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="user_email" placeholder="Your Email" required>
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" placeholder="Message Subject" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button class="cta-btn" type="submit">
-        <i class="fa fa-paper-plane"></i>Send Message</button>
-      </form>
-    </div>
-  </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-container">
+        <!-- Added feedback element -->
+        <div class="form-feedback" role="alert" aria-live="polite"></div>
+        
+        <form id="contact-form" class="contact-form">
+          <!-- Name field -->
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name" 
+                placeholder="Your Name" 
+                aria-describedby="name-help" required>
+          
+          <!-- Email validation attributes -->
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="user_email" 
+                placeholder="your@email.com" 
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                required>
+          
+          <!-- Subject field validation -->
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" 
+                placeholder="Message Subject" 
+                minlength="5" required>
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" 
+                    placeholder="Your message..." 
+                    rows="5" minlength="20" required></textarea>
+          
+          <!-- button with loading state -->
+          <button class="cta-btn" type="submit" aria-label="Send message">
+            <i class="fa fa-paper-plane"></i>Send Message
+          </button>
+        </form>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -68,7 +89,6 @@
         <div class="footer-column footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
@@ -109,8 +129,8 @@
     </footer>
     
     <!-- script files -->
+    <script src="js-files/form-validation.js"></script>
     <script src="js-files/menu-toggle.js"></script>
-
 
   </body>
 </html>

@@ -97,3 +97,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
   initCarousel();
 });
+
+// index.js - Mobile-only Height Adjustment
+document.addEventListener('DOMContentLoaded', function() {
+  const isMobile = window.matchMedia("(max-width: 480px)").matches;
+  
+  if (isMobile) {
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
+    
+    function updateMobileHeight() {
+      const activeItem = carouselItems[currentIndex];
+      const img = activeItem.querySelector('img');
+      img.style.height = window.innerHeight * 0.7 + 'px';
+    }
+
+    function showNextItem() {
+      carouselItems[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % carouselItems.length;
+      carouselItems[currentIndex].classList.add('active');
+      updateMobileHeight();
+    }
+
+    // Initialize only for mobile
+    window.addEventListener('resize', updateMobileHeight);
+    updateMobileHeight();
+    setInterval(showNextItem, 5000);
+  }
+});
