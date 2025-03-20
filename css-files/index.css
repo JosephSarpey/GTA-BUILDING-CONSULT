@@ -286,7 +286,6 @@ a:hover {
   #hero {
     height: 70vh;
     min-height: 400px;
-    background-color: red;
   }
 
   .carousel-item img {
